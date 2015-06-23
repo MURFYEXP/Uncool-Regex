@@ -1,7 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
 #include "re.h"
-#include "todo.h"
 
 
 Re re_Eps_new ()
@@ -168,13 +167,12 @@ static Nfa Re_thompsonDoit (Nfa nfa,Re e)
     return nfa;
 }
 
-Node endNode = NULL;
+/*构造NFA*/
 Nfa Re_thompson (Re e)
 {
   Nfa nfa = Nfa_new ();
   counter = 0;
   Re_thompsonDoit (nfa, e);
-  endNode = nfa->nodes;
   return nfa;
 }
 

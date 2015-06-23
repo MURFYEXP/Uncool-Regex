@@ -75,7 +75,9 @@ Re re_Concat_new (Re left, Re right);
 Re re_Alt_new (Re left, Re right);
 Re re_Closure_new (Re exp);
 
-
+void bSplit();
+void miniDfa_print();
+void minimization();
 void nfa_To_dfa(Nfa nfa);
 void n_To_d(Nfa nfa);
 void Dfa_print();

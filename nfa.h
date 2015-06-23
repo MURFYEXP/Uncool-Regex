@@ -5,7 +5,7 @@
 
 struct Node_t;
 typedef Node_t *Node;
-extern Node endNode;
+
 
 struct Nfa_t
 {

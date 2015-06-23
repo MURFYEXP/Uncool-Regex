@@ -27,11 +27,16 @@ int main(void)
       // a second regular expression:
   //    a (b|c)*
    */
-    
-  Re e = re_Concat_new (re_Char_new ('a')
-                     , re_Closure_new (re_Alt_new(re_Char_new ('b')
-                                                  , re_Char_new ('c'))));
 
+ /* Re e = re_Concat_new (re_Char_new ('a')
+                     , re_Closure_new (re_Alt_new(re_Char_new ('b')
+                                                 , re_Char_new ('c')))); */
+
+    Re e = re_Concat_new ( re_Char_new ('f')
+                        , re_Alt_new (re_Concat_new(re_Char_new ('e')
+                                                    , re_Char_new ('e')),
+                                        re_Concat_new(re_Char_new ('i')
+                                                    , re_Char_new ('e')))); 
   printf ("\nthe regular expression is:\n");
   Re_print (e);
   // convert it to NFA:
@@ -41,6 +46,8 @@ int main(void)
   nfa_To_dfa(nfa);
   Nfa_print (nfa);
   Dfa_print();
-    
+
+    minimization();
+    miniDfa_print();
   return 0;
 }
